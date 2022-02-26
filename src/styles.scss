@@ -1,0 +1,35 @@
+.mat-raised-button {
+  background: #120a8f !important;
+  color: #fff !important;
+  border-radius: 20px !important;
+  height: 40px;
+  cursor: pointer !important;
+  margin-top: 15px !important;
+}
+
+.mat-form-field-infix {
+  border: none !important;
+  outline: none !important;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  display: none !important
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-invalid:not(.mat-focused) .mat-form-field-ripple {
+  display: none !important;
+}
+
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 !important;
+  height: 0 !important;
+}
+
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.50em 0 0.75em 0 !important;
+}
+.mat-form-field-underline {
+  display: none !important;
+}

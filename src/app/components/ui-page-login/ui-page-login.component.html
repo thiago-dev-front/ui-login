@@ -1,5 +1,64 @@
-<p>
-  ui-page-login works!
-</p>
+<video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true"  id="myVideo">
+  <source src="{{circuit}}" type="video/mp4">
+</video>
 
+<section class="ui-page-login">
+  <div class="ui-page-login__container">
+    <div class="ui-page-login__container__author">
+      <div class="ui-page-login__container__author__photo">
+        <img src="https://avatars.githubusercontent.com/u/34626735?v=4" alt="Thiago Diógenes">
+      </div>
+      <div class="ui-page-login__container__author__name">
+        <p>Thiago Diógenes</p>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-home"></i>
+      </div>
+    </div>
 
+    <div class="ui-page-login__container__content">
+      <form [formGroup]="login" (ngSubmit)="submit()" autocomplete="off">
+        <mat-form-field appearance="fill">
+
+          <input
+            matInput
+            type="text"
+            formControlName="username"
+            placeholder="Username"
+          />
+          <mat-error
+            *ngIf="
+              login.get('username')?.errors && login.get('username')?.errors"
+          >
+            E-mail com formato inválido</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            placeholder="Password"
+            id="button-hide"
+          />
+       <div class="button-hide">
+        <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+       </div>
+          <mat-error *ngIf="login.get('password')?.errors">
+            Senha deve ter no minímo 6 caracteres
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button type="submit" [disabled]="!login.valid">
+          Login!
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
