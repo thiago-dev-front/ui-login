@@ -1,0 +1,96 @@
+.experience {
+  &__container {
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+    }
+    @media (min-width: 1600px) {
+      max-width: 1440px;
+    }
+
+    @media (max-width: 1200px) {
+      max-width: 1024px;
+      margin: 0 15px;
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      &__box {
+        &__main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__logo {
+            min-width: 100px;
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+
+          &__text {
+            h2 {
+              padding: 0 15px;
+              margin: 0 0 10px;
+              font-family: "Source Sans Pro", sans-serif;
+            }
+            small {
+              padding: 0 15px;
+              display: block;
+            }
+            span {
+              padding: 0 15px;
+              margin: 5px 0;
+              display: block;
+              font-family: "Source Sans Pro", sans-serif;
+              font-weight: 700;
+            }
+            nav {
+              padding: 0 15px;
+              ul {
+                li {
+                  font-family: "Source Sans Pro", sans-serif;
+                  font-weight: 500;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+        &__techs {
+          display: flex;
+          margin-top: 10px;
+          align-items: center;
+          span {
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+          }
+
+          nav {
+            ul {
+              display: grid;
+              grid-template-columns: repeat(3,1fr);
+              align-items: center;
+              grid-gap: 0 10px;
+              padding-left: 25px;
+              li {
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                color: #120a8f;
+                text-align: center;
+                @media (max-width: 1400px) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
