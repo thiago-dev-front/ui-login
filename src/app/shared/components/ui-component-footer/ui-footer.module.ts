@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiPageHeaderComponent } from './ui-page-header.component';
+import { UiPageFooterComponent } from './ui-footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 
@@ -12,8 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
 
   ],
-  declarations: [UiPageHeaderComponent],
-  exports: [UiPageHeaderComponent],
+  declarations: [UiPageFooterComponent],
+  exports: [UiPageFooterComponent],
 
 })
-export class UiPageHeaderModuleModule { }
+export class UiPageFooterModuleModule { }

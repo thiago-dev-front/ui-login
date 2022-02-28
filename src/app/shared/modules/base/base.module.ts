@@ -1,6 +1,6 @@
 import { NgModule } from  '@angular/core';
-import { UiPageFooterModuleModule } from '../../components/ui-page-footer/ui-page-footer.module';
-import { UiPageHeaderModuleModule } from '../../components/ui-page-header/ui-page-header.module';
+import { UiPageFooterModuleModule } from '../../components/ui-component-footer/ui-footer.module';
+import { UiPageHeaderModuleModule } from '../../components/ui-component-header/ui-header.module';
 
 
 @NgModule({

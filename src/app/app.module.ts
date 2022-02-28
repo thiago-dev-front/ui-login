@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { BaseModules } from './shared/modules/base/base.module';
+import { SharedModules } from './shared/modules/shared-components/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BaseModules } from './shared/modules/base/base.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    SharedModules,
     ReactiveFormsModule,
     FontAwesomeModule,
     BaseModules,

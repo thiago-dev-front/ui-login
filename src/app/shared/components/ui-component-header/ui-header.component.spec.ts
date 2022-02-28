@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiPageHeaderComponent } from './ui-page-header.component';
+import { UiPageHeaderComponent } from './ui-header.component';
 
 describe('UiPageHeaderComponent', () => {
   let component: UiPageHeaderComponent;

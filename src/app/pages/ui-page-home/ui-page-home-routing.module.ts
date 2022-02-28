@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { UiPageHomeComponent } from './ui-page-home.component';
 
 
+
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: UiPageHomeComponent
   }
 ];
