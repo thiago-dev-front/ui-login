@@ -1,0 +1,86 @@
+.ui-page-login {
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__author {
+      &__photo {
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      &__name {
+        p {
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+    &__content {
+      min-width: 320px;
+
+      form {
+        display: grid;
+
+        input {
+          border-radius: 20px;
+          height: 40px;
+          background: #fff;
+          padding: 0 15px;
+          width: 290px;
+        }
+
+        input::-webkit-input-placeholder {
+          padding-left: 20px;
+          opacity: 1;
+        }
+
+        .button-hide {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 6px 10px 0px;
+        }
+      }
+    }
+  }
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
