@@ -1,16 +1,16 @@
 <header class="ui-page-header">
   <div class="ui-page-header__container">
     <div class="ui-page-header__container__content">
-      <div class="ui-page-header__container__content__logo">
+      <div class="ui-page-header__container__content__logo" [routerLink]="['/home']">
         <fa-icon [icon]="faCode"></fa-icon>
       </div>
       <div class="ui-page-header__container__content__menu">
         <nav>
           <ul>
-            <li>Perfil</li>
-            <li>Experiências</li>
-            <li>Cursos</li>
-            <li>Contato</li>
+            <li [routerLink]="['/home']" >Perfil</li>
+            <li [routerLink]="['/experience']" >Experiências</li>
+            <li [routerLink]="['/projects']" >Projetos</li>
+            <li [routerLink]="['/contact']"  >Contato</li>
           </ul>
         </nav>
       </div>
