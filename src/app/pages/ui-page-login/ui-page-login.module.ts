@@ -7,6 +7,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UiPageLoginRoutingModule } from './ui-page-login-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedModules } from 'src/app/shared/modules/shared-components/shared.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -17,7 +20,9 @@ import { SharedModules } from 'src/app/shared/modules/shared-components/shared.m
     ReactiveFormsModule,
     FontAwesomeModule,
     UiPageLoginRoutingModule,
-    SharedModules
+    SharedModules,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   declarations: [UiPageLoginComponent],

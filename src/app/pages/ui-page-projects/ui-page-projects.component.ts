@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import {AuthGoogleService} from '../../shared/service/auth-google.service'
 
 @Component({
   selector: 'app-ui-page-projects',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiPageProjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authGoogle: AuthGoogleService, private router: Router, public afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
+
   }
+
 
 }

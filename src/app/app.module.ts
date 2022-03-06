@@ -8,6 +8,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { BaseModules } from './shared/modules/base/base.module';
 import { SharedModules } from './shared/modules/shared-components/shared.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AuthGoogleService } from './shared/service/auth-google.service';
 
 
 @NgModule({
@@ -23,9 +27,12 @@ import { SharedModules } from './shared/modules/shared-components/shared.module'
     ReactiveFormsModule,
     FontAwesomeModule,
     BaseModules,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [AuthGoogleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

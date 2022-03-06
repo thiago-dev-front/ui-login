@@ -6,9 +6,16 @@
     <div class="ui-page-login__container__author">
       <div class="ui-page-login__container__author__photo">
         <img src="https://avatars.githubusercontent.com/u/34626735?v=4" alt="Thiago Diógenes">
+
       </div>
       <div class="ui-page-login__container__author__name">
         <p>Thiago Diógenes</p>
+
+        <!-- <p *ngFor="let user of userLogin ">
+          <span>{{user.displayName}}</span>
+          <span>{{user.email}}</span>
+          <span>{{user.emailVerified}}</span>
+        </p> -->
         <i class="fas fa-user"></i>
         <i class="fas fa-home"></i>
       </div>
@@ -58,6 +65,34 @@
           Login!
         </button>
       </form>
+    </div>
+    <div>
+      <!-- <div>
+        <div *ngIf="afAuth.authState | async as user">
+          Welcome {{user.displayName}} !!!
+        </div>
+
+        <button class="action-button" *ngIf="(afAuth.authState | async) === null" (click)="signLoginGoogle()">Sign-In with Google</button>
+        <button class="action-button" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">Sign-Out</button>
+         <button (click)="teste()">TESTEE</button>
+      </div> -->
+      <div class="login-google">
+
+        <button type="button" class="login-with-google-btn" *ngIf="(afAuth.authState | async) === null" (click)="signLoginGoogle()">
+          Sign in With Google
+          <div class="login-google__icon">
+            <img src="{{iconGoogle}}" />
+          </div>
+        </button>
+
+        <button type="button" class="login-with-google-btn" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">
+          Sign Out With Google
+          <div class="login-google__icon">
+                <img src="{{iconGoogle}}" />
+          </div>
+        </button>
+      </div>
+
     </div>
   </div>
 </section>

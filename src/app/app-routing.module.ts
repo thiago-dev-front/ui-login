@@ -2,11 +2,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PreloadAllModules } from '@angular/router';
-
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'login',
     loadChildren: () =>
       import('./pages/ui-page-login/ui-page-login.module').then((m) => m.UiPageLoginModule),
   },
@@ -30,6 +37,7 @@ const routes: Routes = [
     path: 'contact',
     loadChildren: () =>
       import('./pages/ui-page-contact/ui-page-contact.module').then((m) => m.UiPageContactModule),
+      // canActivate: [AuthGuard]
   }
 
   // { path: '**', redirectTo: '' },
