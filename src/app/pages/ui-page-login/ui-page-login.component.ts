@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthGoogleService } from 'src/app/shared/service/auth-google.service';
 import { AuthGuard} from '../../guards/auth.guard';
 import firebase from 'firebase/app';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-ui-page-login',
@@ -20,7 +21,7 @@ export class UiPageLoginComponent implements OnInit {
   isAuthenticated: boolean = false
   userLogin : any;
   listUsers: Array<any>  = []
-  constructor(private guards : AuthGuard, private authGoogle: AuthGoogleService, private router: Router, public afAuth: AngularFireAuth) {
+  constructor(private guards : AuthGuard, private authGoogle: AuthGoogleService, private router: Router, public afAuth: AngularFireAuth, private cookieService: CookieService) {
     this.login = new FormGroup({
       username: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [
@@ -42,10 +43,9 @@ export class UiPageLoginComponent implements OnInit {
   ngOnInit() {
      this.authGoogle.afAuth.user.subscribe(user => {
        this.userLogin = user
-
-
        this.listUsers =  {...this.userLogin}
-       console.log('hora da verdade', this.listUsers);
+       console.log('ver status',  this.listUsers )
+
      })
 
 
@@ -53,7 +53,6 @@ export class UiPageLoginComponent implements OnInit {
 
    signLoginGoogle() {
     this.authGoogle.signIn()
-
   }
 
   signOutLoginGoogle() {

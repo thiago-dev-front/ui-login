@@ -22,22 +22,25 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/ui-page-home/ui-page-home.module').then((m) => m.UiPageHomeModule),
+      canActivate: [AuthGuard]
   },
   {
     path: 'experience',
     loadChildren: () =>
       import('./pages/ui-page-experience/ui-page-experience.module').then((m) => m.UiPageExperienceModule),
+      canActivate: [AuthGuard]
   },
   {
     path: 'projects',
     loadChildren: () =>
       import('./pages/ui-page-projects/ui-page-projects.module').then((m) => m.UiPageProjectsModule),
+      canActivate: [AuthGuard]
   },
   {
     path: 'contact',
     loadChildren: () =>
       import('./pages/ui-page-contact/ui-page-contact.module').then((m) => m.UiPageContactModule),
-      // canActivate: [AuthGuard]
+      canActivate: [AuthGuard]
   }
 
   // { path: '**', redirectTo: '' },

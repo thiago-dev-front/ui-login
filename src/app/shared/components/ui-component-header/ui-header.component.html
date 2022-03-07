@@ -14,14 +14,16 @@
           </ul>
         </nav>
       </div>
-      <!-- <div>
+      <div>
+       <div>
         <div *ngIf="afAuth.authState | async as user">
           Welcome {{user.displayName}} !!!
         </div>
 
-        <button class="action-button" *ngIf="(afAuth.authState | async) === null" (click)="signLoginGoogle()">Sign-In with Google</button>
+        <!-- <button class="action-button" *ngIf="(afAuth.authState | async) === null" (click)="signLoginGoogle()">Sign-In with Google</button> -->
         <button class="action-button" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">Sign-Out</button>
-      </div> -->
+       </div>
+      </div>
     </div>
   </div>
 </header>

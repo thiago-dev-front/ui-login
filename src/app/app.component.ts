@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthGoogleService } from './shared/service/auth-google.service';
 import { AuthGuard} from './guards/auth.guard'
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -11,22 +12,21 @@ import { AuthGuard} from './guards/auth.guard'
 })
 export class AppComponent {
   title = 'ui-login';
+  isDisplay: boolean = false;
 
-
-  constructor(private guards:AuthGuard, public afAuth: AngularFireAuth, private router: Router, private authGoogle: AuthGoogleService) {
+  constructor(private guards:AuthGuard, public afAuth: AngularFireAuth, private router: Router, private authGoogle: AuthGoogleService, private cookieService: CookieService) {
 
   }
 
 
 
    ngOnInit() {
-
+    let setIsLogin = this.cookieService.get("isLogin")
+    this.isDisplay = Boolean(setIsLogin)
+    console.log('booleanaaa', this.isDisplay)
    }
 
 
-  //   console.log('fifaaaaaaaaaa' , this.isDisplay)
-
-  // }
 
 
 

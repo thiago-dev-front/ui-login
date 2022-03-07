@@ -12,7 +12,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AuthGoogleService } from './shared/service/auth-google.service';
-
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { AuthGoogleService } from './shared/service/auth-google.service';
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  providers: [AuthGoogleService],
+  providers: [AuthGoogleService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

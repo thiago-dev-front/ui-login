@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthGoogleService } from '../../service/auth-google.service';
 
 
@@ -12,12 +13,21 @@ import { AuthGoogleService } from '../../service/auth-google.service';
 })
 export class UiPageHeaderComponent implements OnInit {
   faCode = faCode
+  isDisplay: boolean = false;
 
 
-  constructor(private authGoogle: AuthGoogleService, private router: Router, public afAuth: AngularFireAuth) { }
+  constructor(private authGoogle: AuthGoogleService, public afAuth: AngularFireAuth, private cookieService: CookieService, private router: Router) { }
 
-  ngOnInit(): void {
-    // console.log('aquiii 2' , this.authGoogle.afAuth.user)
+    ngOnInit() {
+      console.log('adaoata' , this.authenticated())
+   }
+
+
+   authenticated(): boolean {
+     let isAuthHeader = this.afAuth.authState !== null;
+     this.isDisplay = isAuthHeader
+     console.log('isDisplay isDisplay' , this.isDisplay)
+    return isAuthHeader
   }
 
   // signLoginGoogle() {
@@ -25,9 +35,10 @@ export class UiPageHeaderComponent implements OnInit {
   //   this.router.navigate(['/home'])
   // }
 
-  // signOutLoginGoogle() {
-  //   this.authGoogle.signOut()
-  // }
+  signOutLoginGoogle() {
+    this.authGoogle.signOut();
+    this.router.navigate(['login']);
+  }
 
 
 

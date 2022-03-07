@@ -15,10 +15,5 @@ export class UiPageFooterComponent implements OnInit {
 
   }
 
-  async reciverFeedback(count: any) {
-    console.log('Foi emitido o evento e chegou no pai >>>> ', count);
-    let x  = await Object.keys(count)
-    this.teste = x
-    console.log('opa',   x)
-  }
+
 }
