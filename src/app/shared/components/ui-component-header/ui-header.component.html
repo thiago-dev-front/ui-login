@@ -1,7 +1,7 @@
 <header class="ui-page-header">
   <div class="ui-page-header__container">
     <div class="ui-page-header__container__content">
-      <div class="ui-page-header__container__content__logo" [routerLink]="['/login']">
+      <div class="ui-page-header__container__content__logo" [routerLink]="['/home']">
         <fa-icon [icon]="faCode"></fa-icon>
       </div>
       <div class="ui-page-header__container__content__menu">
@@ -15,13 +15,16 @@
         </nav>
       </div>
       <div>
-       <div>
-        <div *ngIf="afAuth.authState | async as user">
-          Welcome {{user.displayName}} !!!
-        </div>
-
-        <!-- <button class="action-button" *ngIf="(afAuth.authState | async) === null" (click)="signLoginGoogle()">Sign-In with Google</button> -->
-        <button class="action-button" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">Sign-Out</button>
+       <div class="ui-page-header__container__content__google login-google">
+        <!-- <div *ngIf="afAuth.authState | async as user">
+          <p><span>Bem Vindo ,</span>{{user.displayName}}</p>
+        </div> -->
+        <button type="button" class="login-with-google-btn" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">
+          Sign Out With Google
+          <div class="login-google__icon">
+                <img src="{{iconGoogle}}" />
+          </div>
+        </button>
        </div>
       </div>
     </div>

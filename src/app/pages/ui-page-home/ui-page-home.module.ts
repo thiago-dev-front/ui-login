@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UiPageHomeRoutingModule } from './ui-page-home-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedModules } from 'src/app/shared/modules/shared-components/shared.module';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SharedModules } from 'src/app/shared/modules/shared-components/shared.m
     ReactiveFormsModule,
     FontAwesomeModule,
     UiPageHomeRoutingModule,
-    SharedModules
+    SharedModules,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   declarations: [UiPageHomeComponent],

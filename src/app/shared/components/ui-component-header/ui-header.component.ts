@@ -14,7 +14,7 @@ import { AuthGoogleService } from '../../service/auth-google.service';
 export class UiPageHeaderComponent implements OnInit {
   faCode = faCode
   isDisplay: boolean = false;
-
+  iconGoogle: string = '../../../assets/svg/icon-google.svg';
 
   constructor(private authGoogle: AuthGoogleService, public afAuth: AngularFireAuth, private cookieService: CookieService, private router: Router) { }
 
