@@ -11,9 +11,6 @@ import { UiPageContactRoutingModule } from './ui-page-contact-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
     UiPageContactRoutingModule,
     SharedModules
   ],

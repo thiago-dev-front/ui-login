@@ -1,6 +1,13 @@
 .contact-form {
+  background-color: rgb(244, 244, 244);
   &__container {
     margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     @media (min-width: 1200px) {
       max-width: 1140px;
     }
@@ -12,15 +19,18 @@
       max-width: 1024px;
       margin: 0 15px;
     }
+    h1 {
+
+      font-family: "Source Sans Pro", sans-serif;
+
+    }
     &__content {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 50%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 35%;
       margin: 0 auto;
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
       .form-group {
         display: flex;
         flex-direction: column;
