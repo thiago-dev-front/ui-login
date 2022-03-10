@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { BaseModules } from './shared/modules/base/base.module';
@@ -25,6 +25,7 @@ import { CookieService } from 'ngx-cookie-service';
     MaterialModule,
     SharedModules,
     ReactiveFormsModule,
+    FormsModule,
     FontAwesomeModule,
     BaseModules,
     AngularFireAuthModule,

@@ -1,0 +1,30 @@
+<section class="contact-form">
+  <div class="contact-form__container">
+    <div class="contact-form__container__content">
+      <form [formGroup]="contactForm" class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <mat-select>
+            <mat-option value="Business">Business</mat-option>
+            <mat-option value="Sales">Sales</mat-option>
+            <mat-option value="Career">Career</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Message</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Send Message</button>
+      </form>
+
+    </div>
+  </div>
+</section>
