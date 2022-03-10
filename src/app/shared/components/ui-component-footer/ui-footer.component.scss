@@ -1,4 +1,45 @@
 .ui-footer {
-    min-height: 100px;
-    background: cornflowerblue;
+  background: url("../../../../assets/simple-footer.png") repeat center;
+  &__container {
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+    }
+    @media (min-width: 1600px) {
+      max-width: 1440px;
+    }
+
+    @media (max-width: 1200px) {
+      max-width: 1024px;
+      margin: 0 15px;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 80px;
+      justify-content: center;
+      small {
+        color: #ccc;
+        letter-spacing: 0.025rem;
+        margin-bottom: 10px;
+        display: block;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+      &__menu {
+        li {
+          color: #c74f78;
+          text-decoration: none;
+          font-family: "Source Sans Pro", sans-serif;
+          margin: 0 0.5rem;
+          display: inline-block;
+          &:hover {
+            color: #00d1ff;
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
