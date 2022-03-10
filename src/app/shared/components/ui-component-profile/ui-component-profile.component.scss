@@ -37,7 +37,8 @@
 
       &__info {
         margin: 60px 0;
-    margin-left: 20%;
+        margin-left: 20%;
+        max-width: 480px;
         h3 {
           font-family: "Source Sans Pro", sans-serif;
           margin: 0;
@@ -45,6 +46,7 @@
         }
 
         &__aboutme {
+          margin-right: 30px;
           p {
             font-family: "Source Sans Pro", sans-serif;
             max-width: 480px;

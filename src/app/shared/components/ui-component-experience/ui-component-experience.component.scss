@@ -1,5 +1,5 @@
 .experience {
-  background-color: rgb(244, 244, 244);
+  margin-bottom: 30px;
   &__container {
     margin: 0 auto;
     @media (min-width: 1200px) {
@@ -30,13 +30,18 @@
     &__content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
       @media (max-width: 980px) {
         grid-template-columns: 1fr;
+
       }
       align-items: center;
       &__box {
-        margin-bottom: 30px;
+        box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        padding: 15px;
+        border-radius: 10px;
         &__main {
+
           display: flex;
           justify-content: center;
           align-items: center;
@@ -132,6 +137,7 @@
         background-position: right;
         background-repeat: no-repeat;
         background-size: contain;
+        background-origin: content-box;
         .experience__container__content__box__main__logo {
           img {
             max-width: 100px;
