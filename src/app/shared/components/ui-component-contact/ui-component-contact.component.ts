@@ -7,7 +7,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./ui-component-contact.component.scss']
 })
 export class UiComponentContactComponent implements OnInit {
-  contactForm: FormGroup
+  contactForm: FormGroup;
+  isSubmit = true;
+  submitMessage='';
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -17,6 +19,15 @@ export class UiComponentContactComponent implements OnInit {
       message: [null, Validators.required],
       subject: [null, Validators.required]
     })
+  }
+
+  submitData(value) {
+    console.log(value);
+    this.isSubmit = true;
+    this.submitMessage = 'Submitted Sucessfuly';
+    setTimeout(() => {
+      this.isSubmit = false;
+    }, 4000)
   }
 
 }
