@@ -4,12 +4,14 @@ import { UiComponentContactComponent } from './ui-component-contact.component';
 import { MaterialModule } from '../../modules/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
   ],
   declarations: [UiComponentContactComponent],

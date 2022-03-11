@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AuthGoogleService } from './shared/service/auth-google.service';
 import { CookieService } from 'ngx-cookie-service';
+import { AngularFirestoreModule} from '@angular/fire/firestore'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CookieService } from 'ngx-cookie-service';
     FontAwesomeModule,
     BaseModules,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
 
   ],

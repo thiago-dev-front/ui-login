@@ -7,10 +7,13 @@
           <mat-label>Nome</mat-label>
           <input matInput formControlName="name" >
         </mat-form-field>
+        <small *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched" >O campo nome é obrigatório</small>
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email">
         </mat-form-field>
+        <small *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched" >O campo email é obrigatório</small>
+
         <mat-form-field appearance="outline">
           <mat-label>Categorias</mat-label>
           <mat-select formControlName="subject" >
@@ -19,10 +22,13 @@
             <mat-option value="outros">Outros</mat-option>
           </mat-select>
         </mat-form-field>
+
         <mat-form-field appearance="outline">
           <mat-label>Digite aqui sua mensagem</mat-label>
           <textarea matInput formControlName="message"></textarea>
         </mat-form-field>
+        <small *ngIf="contactForm.get('message').invalid && contactForm.get('message').touched" >O campo mensagem é obrigatório</small>
+
         <button type="reset" mat-raised-button color="primary"  [disabled]="contactForm.invalid" (click)="submitData(contactForm.value)">Enviar Mensagem</button>
         <p [hidden]="!isSubmit" class="submitMessage">{{submitMessage}}</p>
       </form>
