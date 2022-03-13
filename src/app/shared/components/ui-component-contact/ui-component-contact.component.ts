@@ -13,6 +13,7 @@ export class UiComponentContactComponent implements OnInit {
   contactForm: FormGroup;
   isSubmit = true;
   submitMessage='';
+  iconContact = '../../../../assets/svg/contact.svg'
   private myForm: AngularFirestoreCollection<any>
   constructor(private formBuilder: FormBuilder, private firestore: AngularFirestore) { }
 
