@@ -1,0 +1,159 @@
+.ui-projects {
+  min-height: 100vh;
+  &__container {
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+    }
+    @media (min-width: 1600px) {
+      max-width: 1440px;
+    }
+
+    @media (max-width: 1200px) {
+      max-width: 1024px;
+      margin: 0 15px;
+    }
+
+    &__title {
+      h1 {
+        font-family: "Source Sans Pro", sans-serif;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-family: "Source Sans Pro", sans-serif;
+      }
+    }
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+      margin: 30px 0;
+      &__box {
+        display: flex;
+        justify-content: space-between;
+
+        &__video {
+          flex: 1;
+          img {
+            width: 100%;
+          }
+
+          video {
+            max-width: 100%;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    // Button Right (Codepen)
+    @mixin arrow-button(
+      $color,
+      $background,
+      $shadow,
+      $font-size,
+      $width,
+      $height,
+      $direction
+    ) {
+      background: none;
+      border: 0;
+      font-size: $font-size;
+      line-height: $height;
+      position: relative;
+      width: $width;
+      height: $height;
+
+      @if $direction == "up" {
+        transform: rotate(-90deg);
+      } @else if $direction == "down" {
+        transform: rotate(90deg);
+      }
+
+      a {
+        color: $color;
+        text-decoration: none;
+        position: relative;
+        z-index: 10;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 18px;
+        display: block;
+      }
+
+      &::before,
+      &::after {
+        background: $background;
+        border-radius: 2px;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: all 1s;
+        height: $height/2;
+      }
+
+      &::before {
+        box-shadow: -1px 1px 0 $shadow, -2px 2px 0 $shadow, -3px 3px 0 $shadow,
+          -4px 4px 0 $shadow;
+        transform: skew(45deg);
+        @if $direction == "left" {
+          bottom: 0;
+          z-index: 1;
+        } @else {
+          top: 0;
+        }
+      }
+
+      &::after {
+        box-shadow: 1px 1px 0 $shadow, 2px 2px 0 $shadow, 3px 3px 0 $shadow,
+          4px 4px 0 $shadow;
+        transform: skew(-45deg);
+        @if $direction == "left" {
+          top: 0;
+        } @else {
+          bottom: 0;
+        }
+      }
+
+      &:hover::before,
+      &:hover::after {
+        background: lighten($background, 15%);
+      }
+
+      &:focus {
+        &::before,
+        &::after {
+          background: lighten($background, 15%);
+        }
+        outline: 0;
+      }
+    }
+
+    /* How to include it */
+    .btn-right {
+      @include arrow-button(#fff, #4285f4, #4285f4, 22px, 8em, 2em, right);
+    }
+
+    @keyframes zoom {
+      25% {
+        transform: scale3d(1.5, 1.5, 0);
+      }
+
+      50% {
+        transform: scale3d(1, 1, 0);
+      }
+
+      75% {
+        transform: scale3d(1.25, 1.25, 0);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

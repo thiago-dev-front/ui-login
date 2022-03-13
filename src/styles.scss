@@ -94,7 +94,6 @@ li {
   background: #fff !important;
 }
 
-
 .contact-form {
   button {
     min-height: 40px;
@@ -103,5 +102,29 @@ li {
       font-size: 18px;
     }
   }
+}
 
+.ui-projects__container {
+  &__content {
+    &__box {
+      &__img {
+        &--netshoes {
+          background-image: url(./assets/logo-grupo-netshoes.png);
+          background-size: cover;
+          height: 50px !important;
+          width: 50px !important;
+        }
+        &--dotz {
+          background-image: url(./assets/logo-dotz.png);
+          background-size: cover;
+          height: 50px !important;
+          width: 50px !important;
+        }
+      }
+    }
+  }
+
+  .mat-card-content {
+    font-family: "Source Sans Pro", sans-serif;
+  }
 }

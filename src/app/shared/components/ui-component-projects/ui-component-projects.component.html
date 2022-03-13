@@ -1,0 +1,72 @@
+<section class="ui-projects">
+  <div class="ui-projects__container">
+    <div class="ui-projects__container__title">
+      <h1>Projetos</h1>
+      <p>Segue abaixo alguns dos principais projetos que já trabalhei</p>
+    </div>
+    <div class="ui-projects__container__content">
+      <mat-card>
+        <div class="ui-projects__container__content__box">
+          <mat-card-header>
+            <div
+              mat-card-avatar
+              class="ui-projects__container__content__box__img--netshoes"
+            ></div>
+            <mat-card-title>Netshoes</mat-card-title>
+            <mat-card-subtitle>Ecommerce</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-title-group
+            class="ui-projects__container__content__box__video"
+          >
+            <!-- <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" > -->
+            <video
+              loop
+              muted
+              autoplay
+              oncanplay="this.play()"
+              onloadedmetadata="this.muted = true"
+              id="myVideo"
+            >
+              <source src="{{ netshoes }}" type="video/mp4" />
+            </video>
+          </mat-card-title-group>
+        </div>
+        <mat-card-content>
+          {{ textNetshoes }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <div class="ui-projects__container__content__box">
+          <mat-card-header>
+            <div
+              mat-card-avatar
+              class="ui-projects__container__content__box__img--dotz"
+            ></div>
+            <mat-card-title>Dotz</mat-card-title>
+            <mat-card-subtitle>Recompensas</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-title-group
+            class="ui-projects__container__content__box__video"
+          >
+            <!-- <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" > -->
+            <video
+              loop
+              muted
+              autoplay
+              oncanplay="this.play()"
+              onloadedmetadata="this.muted = true"
+              id="myVideo"
+            >
+              <source src="{{ dotz }}" type="video/mp4" />
+            </video>
+          </mat-card-title-group>
+        </div>
+        <mat-card-content>
+          {{ textNetshoes }}
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <p><button class="btn-right"><a href="https://www.linkedin.com/in/thiago-di%C3%B3genes-18804291/" target="_blank">Outros Projetos</a></button></p>
+  </div>
+</section>
