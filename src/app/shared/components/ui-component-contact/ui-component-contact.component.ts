@@ -1,6 +1,8 @@
+// import { swal } from '@sweetalert';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ui-component-contact',
@@ -14,7 +16,7 @@ export class UiComponentContactComponent implements OnInit {
   private myForm: AngularFirestoreCollection<any>
   constructor(private formBuilder: FormBuilder, private firestore: AngularFirestore) { }
 
-  ngOnInit() {
+   ngOnInit() {
     this.myForm = this.firestore.collection('enquiry');
     this.contactForm = this.formBuilder.group({
       name: [null, [Validators.required]],
@@ -24,10 +26,10 @@ export class UiComponentContactComponent implements OnInit {
     })
   }
 
-  submitData(value) {
+  async submitData(value) {
     // console.log(value);
     this.myForm.add(value).then(response => {
-      this.submitMessage = 'Submitted Sucessfuly';
+      response
     })
     .catch(err => {
       console.log(err)
@@ -36,7 +38,27 @@ export class UiComponentContactComponent implements OnInit {
 
     setTimeout(() => {
       this.isSubmit = false;
-    }, 4000)
+      const Toast =  Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: '#fff',
+        customClass: {
+          popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 3500,
+        timerProgressBar: true
+      })
+       Toast.fire({
+        icon: 'success',
+        title: 'Mensagem enviada com sucesso'
+      })
+    }, 500);
+
+
+
   }
+
+
 
 }

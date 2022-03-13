@@ -14,10 +14,12 @@ import { environment } from 'src/environments/environment';
 import { AuthGoogleService } from './shared/service/auth-google.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AngularFirestoreModule} from '@angular/fire/firestore'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,13 @@ import { AngularFirestoreModule} from '@angular/fire/firestore'
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    SweetAlert2Module.forRoot({
+      provideSwal: () => import('sweetalert2').then(({ default: swal }) => swal.mixin({
+        // example: set global options here
+        confirmButtonText: `Confirmer`,
+        cancelButtonText: `Annuler`
+      }))
+    })
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

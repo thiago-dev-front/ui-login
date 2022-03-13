@@ -3,7 +3,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -75,4 +74,22 @@ li {
   .mat-form-field {
     width: 100%;
   }
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #28a745 !important;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-size: 18px;
+}
+
+.swal2-timer-progress-bar-container {
+  background: #4285f4;
+}
+
+.swal2-timer-progress-bar {
+  background: #fff !important;
 }

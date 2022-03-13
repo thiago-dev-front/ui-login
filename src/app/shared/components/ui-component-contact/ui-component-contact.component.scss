@@ -1,6 +1,9 @@
 .contact-form {
+  background-repeat: no-repeat;
   height: 100%;
-  background-color: rgb(244, 244, 244);
+  background: url(../../../../assets/contact-us.jpg);
+  background-size: cover;
+  background-position: center;
   &__container {
     margin: 0 auto;
     height: 100vh;
@@ -21,7 +24,7 @@
       margin: 0 15px;
     }
     h1 {
-      color: #3f51b5;
+      color: #fff;
       font-family: "Source Sans Pro", sans-serif;
     }
     &__content {
