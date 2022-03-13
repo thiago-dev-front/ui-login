@@ -12,8 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
   title = 'ui-login';
-  isDisplay: boolean = false;
-
+  showContent: boolean = false
   constructor(private guards:AuthGuard, public afAuth: AngularFireAuth, private router: Router, private authGoogle: AuthGoogleService, private cookieService: CookieService) {
 
   }
@@ -21,13 +20,11 @@ export class AppComponent {
 
 
    ngOnInit() {
-    let setIsLogin = this.cookieService.get("isLogin")
-    this.isDisplay = Boolean(setIsLogin)
-    console.log('booleanaaa', this.isDisplay)
+    this.authGoogle.isDisplay.subscribe(
+      show => this.showContent = show,
+      console.log('dede', this.showContent)
+    )
    }
-
-
-
 
 
 

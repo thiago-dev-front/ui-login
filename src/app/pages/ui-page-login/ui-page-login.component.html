@@ -3,6 +3,8 @@
 </video>
 <section class="ui-page-login">
   <div class="ui-page-login__container">
+    <!-- <button mat-button (click)="openDialog()" id="coisa">Launch dialog</button> -->
+
     <div class="ui-page-login__container__author">
       <div class="ui-page-login__container__author__photo">
         <img src="https://avatars.githubusercontent.com/u/34626735?v=4" alt="Thiago Diógenes">
@@ -10,12 +12,6 @@
       </div>
       <div class="ui-page-login__container__author__name">
         <p>Thiago Diógenes</p>
-
-        <!-- <p *ngFor="let user of userLogin ">
-          <span>{{user.displayName}}</span>
-          <span>{{user.email}}</span>
-          <span>{{user.emailVerified}}</span>
-        </p> -->
         <i class="fas fa-user"></i>
         <i class="fas fa-home"></i>
       </div>
@@ -61,7 +57,7 @@
             Senha deve ter no minímo 6 caracteres
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button type="submit" [disabled]="!login.valid">
+        <button mat-raised-button type="submit" [disabled]="!login.valid" (click)="loginMain()">
           Login!
         </button>
       </form>
