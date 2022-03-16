@@ -25,6 +25,10 @@
         margin-bottom: 10px;
         display: block;
         font-family: "Source Sans Pro", sans-serif;
+        @media (max-width: 500px) {
+          text-align: center;
+          max-width: 250px;
+        }
       }
       &__menu {
         li {
