@@ -1,5 +1,8 @@
 .ui-projects {
   min-height: 100vh;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
   &__container {
     margin: 0 auto;
     @media (min-width: 1200px) {

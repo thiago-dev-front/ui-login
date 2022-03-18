@@ -1,31 +1,48 @@
 <header class="ui-page-header">
   <div class="ui-page-header__container">
     <div class="ui-page-header__container__content">
-      <div class="ui-page-header__container__content__logo" [routerLink]="['/home']">
+      <div
+        class="ui-page-header__container__content__logo"
+        [routerLink]="['/home']"
+      >
         <fa-icon [icon]="faCode"></fa-icon>
       </div>
       <div class="ui-page-header__container__content__menu">
         <nav>
           <ul>
-            <li [routerLink]="['/home']" >Perfil</li>
-            <li [routerLink]="['/experience']" >Experiências</li>
-            <li [routerLink]="['/projects']" >Projetos</li>
-            <li [routerLink]="['/contact']"  >Contato</li>
+            <li [routerLink]="['/home']">Perfil</li>
+            <li [routerLink]="['/experience']">Experiências</li>
+            <li [routerLink]="['/projects']">Projetos</li>
+            <li [routerLink]="['/contact']">Contato</li>
           </ul>
         </nav>
       </div>
       <div>
-       <div class="ui-page-header__container__content__google login-google">
-        <!-- <div *ngIf="afAuth.authState | async as user">
+        <div class="wrapper" [hidden]="!showContent && afAuth.authState | async">
+          <a (click)="logout()" class="sign-out pull-right">
+            <span>Sign Out</span>
+            <i class="fa fa-sign-out"></i>
+          </a>
+        </div>
+
+        <div class="ui-page-header__container__content__google login-google">
+          <!-- <div *ngIf="afAuth.authState | async as user">
           <p><span>Bem Vindo ,</span>{{user.displayName}}</p>
         </div> -->
-        <button type="button" class="login-with-google-btn" *ngIf="(afAuth.authState | async)" (click)="signOutLoginGoogle()">
-          Sign Out With Google
-          <div class="login-google__icon">
-                <img src="{{iconGoogle}}" />
-          </div>
-        </button>
-       </div>
+          <button
+            type="button"
+            class="login-with-google-btn"
+            *ngIf="afAuth.authState | async"
+            (click)="signOutLoginGoogle()"
+          >
+            Sign Out With Google
+            <div class="login-google__icon">
+              <img src="{{ iconGoogle }}" />
+            </div>
+          </button>
+        </div>
+
+
       </div>
     </div>
   </div>

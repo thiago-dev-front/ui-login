@@ -13,33 +13,24 @@ import { AuthGoogleService } from '../../service/auth-google.service';
 })
 export class UiPageHeaderComponent implements OnInit {
   faCode = faCode
-  isDisplay: boolean = false;
+  showContent: boolean = false
   iconGoogle: string = '../../../assets/svg/icon-google.svg';
 
   constructor(private authGoogle: AuthGoogleService, public afAuth: AngularFireAuth, private cookieService: CookieService, private router: Router) { }
 
     ngOnInit() {
-      console.log('adaoata' , this.authenticated())
+      this.authGoogle.isDisplay.subscribe(
+        show => this.showContent = show,
+      )
    }
-
-
-   authenticated(): boolean {
-     let isAuthHeader = this.afAuth.authState !== null;
-     this.isDisplay = isAuthHeader
-     console.log('isDisplay isDisplay' , this.isDisplay)
-    return isAuthHeader
-  }
-
-  // signLoginGoogle() {
-  //   this.authGoogle.signIn();
-  //   this.router.navigate(['/home'])
-  // }
 
   signOutLoginGoogle() {
     this.authGoogle.signOut();
-    this.router.navigate(['login']);
   }
 
+ logout() {
+   this.authGoogle.logout()
+ }
 
 
 }

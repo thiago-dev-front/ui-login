@@ -26,17 +26,20 @@ export class AuthGuard implements CanActivate {
 
     const user = await this.afAuth['currentUser'];
     const isAuthenticated = user ? true : false;
-    this.cookieService.set('isLogin', JSON.stringify(isAuthenticated))
-    let getAuth = this.cookieService.get("isLogin")
-    let isActiveBoolean = Boolean(getAuth)
-    if (isActiveBoolean) {
-      return isActiveBoolean
+    const isUserLogin = this.authGoogle.userIsLogged
+    // this.cookieService.set('isLogin', JSON.stringify(isAuthenticated))
+    // let getAuth = this.cookieService.get("isLogin")
+    // let isActiveBoolean = Boolean(getAuth)
+
+    if (isAuthenticated || isUserLogin) {
+      return true
     }
     else {
       this.router.navigate(['login']);
+
     }
 
-    return isActiveBoolean;
+    return isAuthenticated;
 
   }
 

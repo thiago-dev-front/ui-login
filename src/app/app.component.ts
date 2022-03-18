@@ -22,7 +22,6 @@ export class AppComponent {
    ngOnInit() {
     this.authGoogle.isDisplay.subscribe(
       show => this.showContent = show,
-      console.log('dede', this.showContent)
     )
    }
 

@@ -1,9 +1,6 @@
 .contact-form {
-  background-repeat: no-repeat;
   height: 100%;
-  background: url(../../../../assets/contact-us.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: rgb(244, 244, 244);
   padding-bottom: 30px;
   &__container {
     margin: 0 auto;
@@ -24,6 +21,15 @@
       max-width: 1024px;
       margin: 0 15px;
     }
+    @media (max-width: 768px) {
+      height: inherit;
+    }
+
+    img {
+      max-width: 120px;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
     h1 {
       color: #fff;
       font-family: "Source Sans Pro", sans-serif;
@@ -35,7 +41,8 @@
       border-radius: 10px;
       width: 35%;
       margin: 0 auto;
-      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+        0 1px 5px 0 rgb(0 0 0 / 12%);
 
       @media (max-width: 900px) {
         width: 100%;
@@ -45,8 +52,7 @@
         flex-direction: column;
 
         width: 100%;
-        input
-        {
+        input {
           width: 100%;
         }
         .submitMessage {
@@ -58,10 +64,10 @@
           font-family: "Source Sans Pro", sans-serif;
           color: #212529;
           font-weight: 600;
-          position: relative; bottom: 15px
-      }
+          position: relative;
+          bottom: 15px;
+        }
       }
     }
   }
 }
-

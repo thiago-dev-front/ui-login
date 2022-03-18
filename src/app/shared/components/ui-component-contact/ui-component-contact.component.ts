@@ -28,7 +28,6 @@ export class UiComponentContactComponent implements OnInit {
   }
 
   async submitData(value) {
-    // console.log(value);
     this.myForm.add(value).then(response => {
       response
     })
