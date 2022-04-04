@@ -4,6 +4,10 @@
   width: 100%;
   z-index: 9;
   top: 0;
+  .hideMenu {
+    display: none;
+  }
+
 
   &__container {
     margin: 0 auto;
@@ -161,3 +165,5 @@
 .sign-out > span {
   margin: 0.1em;
 }
+
+

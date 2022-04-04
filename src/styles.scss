@@ -132,3 +132,16 @@ li {
     font-family: "Source Sans Pro", sans-serif;
   }
 }
+
+// Style Scroll
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4285f4;
+  border-radius: 10px;
+}

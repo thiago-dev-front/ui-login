@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ui-login';
+  title = 'Portifólio - [DEV]';
   showContent: boolean = false
   constructor(private guards:AuthGuard, public afAuth: AngularFireAuth, private router: Router, private authGoogle: AuthGoogleService, private cookieService: CookieService) {
 

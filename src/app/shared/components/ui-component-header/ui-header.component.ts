@@ -13,7 +13,8 @@ import { AuthGoogleService } from '../../service/auth-google.service';
 })
 export class UiPageHeaderComponent implements OnInit {
   faCode = faCode
-  showContent: boolean = false
+  showContent: boolean = false;
+  activeClass: boolean = false;
   iconGoogle: string = '../../../assets/svg/icon-google.svg';
 
   constructor(private authGoogle: AuthGoogleService, public afAuth: AngularFireAuth, private cookieService: CookieService, private router: Router) { }
@@ -25,7 +26,10 @@ export class UiPageHeaderComponent implements OnInit {
    }
 
   signOutLoginGoogle() {
+    this.activeClass = !this.activeClass
+    console.log('hum' , this.activeClass)
     this.authGoogle.signOut();
+
   }
 
  logout() {
